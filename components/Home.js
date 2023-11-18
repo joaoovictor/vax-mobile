@@ -4,19 +4,19 @@ import { Banner } from './Banner';
 import { Feather, FontAwesome5 } from "@expo/vector-icons";
 
 
-export function Home() {
+export function Home({ navigation }) {
   return (
     <VStack paddingTop={20} flex={1} space={60} bg="#EFEFEF">
       <HStack alignItems='center' justifyContent='space-around'>
         <Avatar
           source={{
-            uri: "https://pbs.twimg.com/profile_images/1369921787568422915/hoyvrUpc_400x400.jpg"
+            uri: "https://t.ctcdn.com.br/BJyPkubCHjm_RTDyKdQw9IVisFE=/400x400/smart/i490892.jpeg"
           }}
         >
           SS
           <Avatar.Badge bg="green.500" />
         </Avatar>
-        <Text fontFamily="Lato_700Bold">Home</Text>
+        <Text fontFamily="Lato_700Bold" fontSize={18}>Home</Text>
         <Menu w="190" trigger={triggerProps => {
           return <Pressable accessibilityLabel="More options menu" {...triggerProps}>
             <HamburgerIcon />
@@ -50,7 +50,9 @@ export function Home() {
             as: Feather,
             name: "user", 
             color: "info.300"
-          }} />
+          }}
+          onPress={() => navigation.navigate('Profile')}
+          />
         </View>
         <View flex={2}>
           <IconButton bg="white" flex={1} height={95} size={'lg'} variant="solid" _icon={{
